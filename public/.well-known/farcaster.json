@@ -1,0 +1,30 @@
+{
+  "accountAssociation": {
+    "header": "",
+    "payload": "",
+    "signature": ""
+  },
+  "frame": {
+    "version": "1",
+    "name": "CryptoFlow Insights",
+    "subtitle": "Built with Zara",
+    "description": "CryptoFlow Insights is a Base Mini App built with Zara.",
+    "iconUrl": "https://0co.to/images/zara-2.png",
+    "homeUrl": "https://92ed250979d64d5898a27408c97fcc87-r8l9.vercel.app",
+    "splashImageUrl": "https://92ed250979d64d5898a27408c97fcc87-r8l9.vercel.app/splash.png",
+    "splashBackgroundColor": "#000000",
+    "heroImageUrl": "https://92ed250979d64d5898a27408c97fcc87-r8l9.vercel.app/image.png",
+    "tagline": "CryptoFlow Insights",
+    "screenshotUrls": [
+      "https://92ed250979d64d5898a27408c97fcc87-r8l9.vercel.app/screenshot.png",
+      "https://92ed250979d64d5898a27408c97fcc87-r8l9.vercel.app/screenshot.png"
+    ],
+    "primaryCategory": "social",
+    "tags": [
+      "base",
+      "miniapp",
+      "onchainkit"
+    ],
+    "webhookUrl": "https://92ed250979d64d5898a27408c97fcc87-r8l9.vercel.app/api/webhook"
+  }
+}

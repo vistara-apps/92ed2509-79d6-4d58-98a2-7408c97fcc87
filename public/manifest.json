@@ -1,0 +1,14 @@
+{
+  "name": "CryptoFlow Insights",
+  "description": "CryptoFlow Insights is a Base Mini App built with Zara.",
+  "image": "https://dummyimage.com/1200x628/0a0b0d/ffffff.png&text=OG",
+  "external_url": "https://92ed2509-79d6-4d58-98a2-7408c97fcc87.vercel.app",
+  "properties": {
+    "app": {
+      "name": "CryptoFlow Insights",
+      "description": "CryptoFlow Insights is a Base Mini App built with Zara.",
+      "url": "https://92ed2509-79d6-4d58-98a2-7408c97fcc87.vercel.app",
+      "icon": "https://0co.to/images/zara-2.png"
+    }
+  }
+}
