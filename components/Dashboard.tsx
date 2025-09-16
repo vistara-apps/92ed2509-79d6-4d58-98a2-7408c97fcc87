@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useAccount } from 'wagmi';
+// import { useMiniKit } from '@coinbase/minikit';
 import { WalletConnector } from './WalletConnector';
 import { TransactionHistory } from './TransactionHistory';
 import { PortfolioOverview } from './PortfolioOverview';
@@ -11,7 +11,9 @@ import { generateMockTransactions, calculatePortfolioMetrics } from '@/lib/utils
 import type { Transaction, Wallet, PortfolioMetrics } from '@/lib/types';
 
 export function Dashboard() {
-  const { address, isConnected } = useAccount();
+  // For demo purposes, we'll simulate a connected state
+  const [isConnected, setIsConnected] = useState(false);
+  const [address, setAddress] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<'overview' | 'transactions' | 'contracts'>('overview');
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [wallets, setWallets] = useState<Wallet[]>([]);
@@ -22,7 +24,7 @@ export function Dashboard() {
   useEffect(() => {
     if (isConnected && address) {
       setLoading(true);
-      
+
       // Simulate API call delay
       setTimeout(() => {
         const mockTransactions = generateMockTransactions(25);
@@ -34,7 +36,7 @@ export function Dashboard() {
           balance: '2.45',
           usdValue: 4250.75,
         };
-        
+
         setTransactions(mockTransactions);
         setWallets([mockWallet]);
         setPortfolioMetrics(calculatePortfolioMetrics(mockTransactions, [mockWallet]));
@@ -47,10 +49,27 @@ export function Dashboard() {
     }
   }, [isConnected, address]);
 
+  // Simulate connection for demo
+  const handleConnect = () => {
+    setIsConnected(true);
+    setAddress('0x742d35Cc6634C0532925a3b844Bc454e4438f44e');
+  };
+
   if (!isConnected) {
     return (
       <div className="max-w-md mx-auto mt-20">
         <WalletConnector />
+        <div className="mt-6 text-center">
+          <button
+            onClick={handleConnect}
+            className="bg-crypto-teal hover:bg-crypto-teal/80 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200"
+          >
+            Demo: Connect Wallet
+          </button>
+          <p className="text-slate-400 text-sm mt-2">
+            Click to see the dashboard with mock data
+          </p>
+        </div>
       </div>
     );
   }
